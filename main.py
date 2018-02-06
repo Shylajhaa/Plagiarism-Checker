@@ -8,9 +8,10 @@ fileName3 = 'virtualMouse.txt'
 fileName4 = 'nanorobots.txt'
 fileName5 = 'miniSearchEngine.txt'
 fileName6 = 'password.txt'
+fileName7 = 'harrypotter.txt'
 responseDoc = 'result.txt'
 
-requestDoc = fileName1
+requestDoc = fileName4
 
 readDoc = ReadDocument()
 fileContent = readDoc.readFile(requestDoc)
@@ -27,4 +28,6 @@ webSearch.google_search(keywords)
 
 checkSimilarity = Similarity()
 value = checkSimilarity.similarValue(requestDoc,responseDoc)
+f = open(responseDoc, 'r+')
+f.truncate()
 print(value)
