@@ -1,36 +1,22 @@
 import nltk
+import rake
+import operator
 class ReadDocument():
-	def printFile(self,fileName):
-		required = ['CD', 'FW', 'LS', 'NN', 'NNS', 'NNP', 'NNPS', 'PDT', 'RP','JJ']
+
+	def readFile(self,fileName):
 		file = open(fileName,'r',encoding='latin1')
 		fileContent = file.read()
-		#print(fileContent)
-		text = nltk.word_tokenize(fileContent)
-		tags = nltk.pos_tag(text)
-		#for x in tags:
-		#	print(x)
-		keywords = []
-		for tag,part in tags:
-			if part in required:
-				keywords.append(tag)
-		#for x in keywords:
-		#	print(x)
-		#print(fileName+" "+str(len(set(keywords))))
-		return list(set(keywords))
+		return fileContent
 
+	def getKeywords(self,content):
+			rake_object = rake.Rake("SmartStoplist.txt",3,2)
+			keywords = rake_object.run(content)
+			keywordWeights = sorted(set([word[1] for word in keywords]),reverse=True)
+			requiredCount = round(0.5*len(keywordWeights))
 
-'''
-fileName1 = 'holography.txt'
-fileName2 = 'RaspberryPiabsoly.txt'
-fileName3 = 'virtualMouse.txt'
-fileName4 = 'nanorobots.txt'
-fileName5 = 'miniSearchEngine.txt'
-fileName6 = 'password.txt'
-obj = ReadDocument()
-obj.printFile(fileName1)
-obj.printFile(fileName2)
-obj.printFile(fileName3)
-obj.printFile(fileName4)
-obj.printFile(fileName5)
-obj.printFile(fileName6)
-'''
+			requiredWeights = keywordWeights[:requiredCount]
+
+			requiredKeywords = [word[0] for word in keywords if word[1] in requiredWeights]
+			return requiredKeywords
+
+	

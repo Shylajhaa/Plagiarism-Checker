@@ -1,9 +1,3 @@
-DATA INTEGRITY USING HOLOGRAPHY IN DATABASES
-Authors: SHYLAJHAA R S
-     SWATHY L
-                 PRE-FINAL YR CSE
-                                    RMD ENGINEERING COLLEGE
-ABSTRACT
 Holographic data storage is a potential replacement technology in the area of high-capacity data storage currently dominated by magnetic and conventional optical data storage. Holographic storage works by storing a sequence of discrete data snapshots within the thickness of the media. The storage process starts when a laser beam is split into two signals. One beam is used as a reference signal. Another beam, called the data-carrying beam, is passed through a device called a spatial light modulator (SLM) which acts as a fine shutter system, passing and blocking light at points corresponding to ones and zeroes. The reference beam is then reflected to impinge on the data-carrying beam within the media. This creates a three-dimensional refraction pattern (the "hologram") that is captured in the media. Holographic storage uses circular media similar to a blank CD or DVD that spins to accept data along a continuous spiral data path. Once the media is written, data is read back using the reference beam to illuminate the refraction.
 Our development in this project is to use a manganese-iron doped lithium-niobate crystal to prevent data from being erased due to repetitive reading. In order to facilitate this development, data is written onto the crystal in the presence of ultra-violet light.
 
