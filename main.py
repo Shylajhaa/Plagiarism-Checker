@@ -9,9 +9,13 @@ fileName4 = 'nanorobots.txt'
 fileName5 = 'miniSearchEngine.txt'
 fileName6 = 'password.txt'
 fileName7 = 'harrypotter.txt'
+fileName8 = 'department_auto.txt'
+
 responseDoc = 'result.txt'
 
-requestDoc = fileName4
+#responseDoc = fileName5;
+
+requestDoc = fileName5
 
 readDoc = ReadDocument()
 fileContent = readDoc.readFile(requestDoc)
@@ -30,4 +34,7 @@ checkSimilarity = Similarity()
 value = checkSimilarity.similarValue(requestDoc,responseDoc)
 f = open(responseDoc, 'r+')
 f.truncate()
-print(value)
+print("----------SIMILARITY-----------")
+#print(value)
+print(str(round((value*100),2))+"%")
+print("-------------------------------")

@@ -1,5 +1,6 @@
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize
 from ReadDocument import ReadDocument
 import spacy
 
@@ -33,6 +34,8 @@ class Similarity():
 		nlp = spacy.load('en_vectors_web_lg')
 		listOfSentences1 = string1.split('.')
 		listOfSentences2 = string2.split('.')
+		#listOfSentences1 = sent_tokenize(string1)
+		#listOfSentences2 = sent_tokenize(string2)
 		#print("Split into sentenes")
 		#measures  = []
 		sim = 0
@@ -43,7 +46,7 @@ class Similarity():
 				doc2 = nlp(line2)
 				measures.append(doc1.similarity(doc2))
 			for value in measures:
-				if(value>0.85):
+				if(value>0.75):
 					sim = sim + 1
 					break
 		#count = len(measures)

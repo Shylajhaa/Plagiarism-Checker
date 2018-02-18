@@ -1,0 +1,33 @@
+In
+	 department all the works are done manually using Microsoft Office packages, This leads to lots of burden to all staffs in the department and their valuable time is wasted.
+	
+	
+	
+	Sometimes
+	 it leads to manual errors such as inconsistency in data, reduces its integrity and inappropriate information during analysis of department details.
+	
+	
+	To
+	 overcome all these issues, We are implementing Department Automation System. This system will save the valuable time of Staff in department; reduce manual errors and work burden of staffs.
+	
+	
+	This
+	 system contains 4 modules. They are , 
+	
+		
+	
+	Anna
+	 University Result Analysis
+	
+	
+	Placement
+	 Details Tracking
+	
+	
+	Attendance
+	 System
+	
+	
+	Result
+	 analysis of Internal, Cycle, Model tests
+	
