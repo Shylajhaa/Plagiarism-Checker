@@ -15,9 +15,11 @@ responseDoc = 'result.txt'
 
 #responseDoc = fileName5;
 
+#requestDoc = 'abstract.txt'
 requestDoc = fileName5
 
 readDoc = ReadDocument()
+print("Reading input document")
 fileContent = readDoc.readFile(requestDoc)
 keywords = readDoc.getKeywords(fileContent)
 
@@ -27,14 +29,20 @@ keywords = readDoc.getKeywords(fileContent)
 
 
 webSearch = WebSearch()
+print("crawling the web")
 webSearch.google_search(keywords)
 #webSearch.trialSearch()	
 
 checkSimilarity = Similarity()
+print("checking similarity")
 value = checkSimilarity.similarValue(requestDoc,responseDoc)
 f = open(responseDoc, 'r+')
 f.truncate()
 print("----------SIMILARITY-----------")
 #print(value)
-print(str(round((value*100),2))+"%")
+resultValue = str(round((value*100),2))+"%"
+#print(str(round((value*100),2))+"%")
+print(resultValue);
+file = open('similarityValue.txt','w',encoding='utf-8')
+file.write(str(resultValue))
 print("-------------------------------")
